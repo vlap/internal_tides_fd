@@ -1,0 +1,50 @@
+[H[2J *************************************************************************************************
+ Choose a valid method of incorporating dynamical ITD into the baro model.
+ Switched to the default (most stable): itm_method=12
+ *************************************************************************************************
+Saving data as 2013_08_10__06_35
+Loading topography file: /scratch/a/users/amtvl/Tides/data/LAG/baro_fd/in/topo/nocs/topo_rot_2.0min_pole_15_-40.dat 
+Interpolating topo to  3.00 min resolution global grid:  done.
+****** Ocean is in the first/last tau index of H_hg. Removed ******
+Removing bays and inlets: 5401 + 1391 + 654 + 372 + 229 + 163 + 116 + 81 + 65 + 53 + 40 + 32 + 24 + 19 + 16 + 15 + 15 + 14 + 11 + 10 + 9 + 9 + 8 + 7 + 7 + 6 + 6 + 5 + 3 + 2 + 2 + 2 + 2 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 0.
+Removing inland seas/lakes: found 263 connected components; removed 260 of size < 720 cells.
+Smoothing topo for the linear ITD scheme. Smoothing type - sinc + truncation filter wrt SH ; n_sht=1800
+1) loading SH coeffs (fast)... done (CPU: 106.65, Wall: 106.74)
+2) spherical harmonic synthesis... done (CPU: 336.84, Wall: 337.41)
+done (CPU: 7:26.8, Wall: 7:27.6)
+Allocating grid points: 16950793 for u, 16978921 for v, 16919530  for h.
+Making vectors: tau, H, evaluating on the u-, v-, h-grid done (CPU: 5.811, Wall: 5.820)
+Making matrices:
+ - d/dph and 1 for h-grid functions, evaluating on the u-grid (CPU: 2.2s, Wall:2.2s)
+ - d/dta and 1 for h grid functions, evaluating on the v-grid (CPU: 2.2s, Wall:2.2s)
+ - d/dph and 1 for u-grid functions, evaluating on the h-grid (CPU: 2.2s, Wall:2.2s)
+ - d/dta and 1 for v-grid functions, evaluating on the h-grid (CPU: 2.3s, Wall:2.3s)
+ - v & fv,     			     evaluating on the u-grid (CPU: 47.3s, Wall:47.4s)
+ - u & fu,     			     evaluating on the v-grid (CPU: 47.1s, Wall:47.2s)
+Saving matrices: done.
+ 
+Solve the eigenv problem to find c_n: done (CPU: 4.124, Wall: 4.173)
+ 
+Generating sponge layer(s) for  3 modes. Semidiurnal frequencies (0.1405E-03)
+Minimal resolved depths for cpt=*2: mode  1: 1001.3m; Minimal resolved depths for cpt=*2: mode  2: 2002.6m; Minimal resolved depths for cpt=*2: mode  3: 3003.9m;  
+Removing inland seas/lakes: found 97 connected components; removed 92 of size < 14400 cells.
+Removing inland seas/lakes: found 180 connected components; removed 172 of size < 14400 cells.
+Removing inland seas/lakes: found 715 connected components; removed 707 of size < 14400 cells.
+Relative sponge area for cpt=*2: mode  1: 16.9%; mode  2: 22.5%; mode  3: 32.7%;  
+Smooth cn within the sponge area for cpt=*2: mode  1; mode  2; mode  3; done.
+Diurnal frequencies (0.7292E-04)
+Minimal resolved depths for cpt=*1: mode  1:  519.6m; Minimal resolved depths for cpt=*1: mode  2: 1039.2m; Minimal resolved depths for cpt=*1: mode  3: 1558.9m;  
+Removing inland seas/lakes: found 187 connected components; removed 184 of size < 14400 cells.
+Removing inland seas/lakes: found 103 connected components; removed 98 of size < 14400 cells.
+Removing inland seas/lakes: found 132 connected components; removed 126 of size < 14400 cells.
+Relative sponge area for cpt=*1: mode  1: 14.2%; mode  2: 17.1%; mode  3: 19.8%;  
+Smooth cn within the sponge area for cpt=*1: mode  1; mode  2; mode  3; done.
+At line 1274 of file src/generate/generate_global_grid.f90
+Fortran runtime error: Attempt to DEALLOCATE unallocated 'c2n_orig'
+
+Backtrace for this error:
+  + function __generate_grid_MOD_generate_sponge (0x4EF282)
+    at line 1274 of file generate_global_grid.f90
+  + in the main program
+    at line 233 of file igw_v1.f90
+  + /lib64/libc.so.6(__libc_start_main+0xfd) [0x33f201ecdd]

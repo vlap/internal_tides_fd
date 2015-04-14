@@ -1,0 +1,879 @@
+[H[2J *************************************************************************************************
+ Choose a valid method of incorporating dynamical ITD into the baro model.
+ Switched to the default (most stable): itm_method=12
+ *************************************************************************************************
+Saving data as 2013_08_10__03_39
+Loading topography file: /scratch/a/users/amtvl/Tides/data/LAG/baro_fd/in/topo/nocs/topo_rot_2.0min_pole_15_-40.dat 
+Interpolating topo to  3.00 min resolution global grid:  done.
+****** Ocean is in the first/last tau index of H_hg. Removed ******
+Removing bays and inlets: 5401 + 1391 + 654 + 372 + 229 + 163 + 116 + 81 + 65 + 53 + 40 + 32 + 24 + 19 + 16 + 15 + 15 + 14 + 11 + 10 + 9 + 9 + 8 + 7 + 7 + 6 + 6 + 5 + 3 + 2 + 2 + 2 + 2 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 0.
+Removing inland seas/lakes: found 263 connected components; removed 260 of size < 720 cells.
+Smoothing topo for the linear ITD scheme. Smoothing type - SH truncation; n_sht=900
+Loading topography file: /scratch/a/users/amtvl/Tides/data/LAG/baro_fd/in/topo/nocs/smoothed_t1_trunc900_topo_rot_2.0min_pole_15_-40.dat 
+done (CPU: 1.650, Wall: 4.155)
+Allocating grid points: 16950793 for u, 16978921 for v, 16919530  for h.
+Making vectors: tau, H, evaluating on the u-, v-, h-grid done (CPU: 6.928, Wall: 6.939)
+Making matrices:
+ - d/dph and 1 for h-grid functions, evaluating on the u-grid (CPU: 2.9s, Wall:2.9s)
+ - d/dta and 1 for h grid functions, evaluating on the v-grid (CPU: 3.1s, Wall:3.1s)
+ - d/dph and 1 for u-grid functions, evaluating on the h-grid (CPU: 3.1s, Wall:3.1s)
+ - d/dta and 1 for v-grid functions, evaluating on the h-grid (CPU: 7.4s, Wall:7.5s)
+ - v & fv,     			     evaluating on the u-grid (CPU: 67.1s, Wall:67.6s)
+ - u & fu,     			     evaluating on the v-grid (CPU: 47.8s, Wall:47.8s)
+Saving matrices: done.
+ 
+Solve the eigenv problem to find c_n: done (CPU: 4.032, Wall: 4.102)
+ 
+Generating sponge layer(s) for  3 modes. Semidiurnal frequencies (0.1405E-03)
+Minimal resolved depths for cpt=*2: mode  1: 1001.3m; Minimal resolved depths for cpt=*2: mode  2: 2002.6m; Minimal resolved depths for cpt=*2: mode  3: 3003.9m;  
+Removing inland seas/lakes: found 145 connected components; removed 140 of size < 14400 cells.
+Removing inland seas/lakes: found 310 connected components; removed 301 of size < 14400 cells.
+Removing inland seas/lakes: found 1274 connected components; removed 1266 of size < 14400 cells.
+Relative sponge area for cpt=*2: mode  1: 17.0%; mode  2: 22.6%; mode  3: 33.0%;  
+Smooth cn within the sponge area for cpt=*2: mode  1; mode  2; mode  3; done.
+Diurnal frequencies (0.7292E-04)
+Minimal resolved depths for cpt=*1: mode  1:  519.6m; Minimal resolved depths for cpt=*1: mode  2: 1039.2m; Minimal resolved depths for cpt=*1: mode  3: 1558.9m;  
+Removing inland seas/lakes: found 332 connected components; removed 329 of size < 14400 cells.
+Removing inland seas/lakes: found 130 connected components; removed 125 of size < 14400 cells.
+Removing inland seas/lakes: found 239 connected components; removed 232 of size < 14400 cells.
+Relative sponge area for cpt=*1: mode  1: 14.3%; mode  2: 17.2%; mode  3: 19.9%;  
+Smooth cn within the sponge area for cpt=*1: mode  1; mode  2; mode  3; done.
+At line 1274 of file src/generate/generate_global_grid.f90
+Fortran runtime error: Attempt to DEALLOCATE unallocated 'c2n_orig'
+
+Backtrace for this error:
+  + function __generate_grid_MOD_generate_sponge (0x4EF282)
+    at line 1274 of file generate_global_grid.f90
+  + in the main program
+    at line 233 of file igw_v1.f90
+  + /lib64/libc.so.6(__libc_start_main+0xfd) [0x33f201ecdd]
+[H[2JSaving data as 2013_08_11__19_42
+Linking to previously generated grid: /2013_08_11__16_30
+----------------------------------------------------------------------------------------
+Prepare the initial guess baro solution: use 2013_08_11__16_30
+Identical grids. Present solution is copied and taken as initial guess.
+----------------------------------------------------------------------------------------
+ 
+Linking to c_n on the previously generated grid: done (CPU: 0.002, Wall: 0.022)
+ 
+Generating sponge layer(s) for  3 modes. Semidiurnal frequencies (0.1405E-03)
+ 
+Removing inland seas/lakes: found 362 connected components; removed 357 of size < 14400 cells.
+Removing inland seas/lakes: found 202 connected components; removed 200 of size < 14400 cells.
+Removing inland seas/lakes: found 329 connected components; removed 329 of size < 14400 cells.
+Relative sponge area for cpt=*2: mode  1: 16.3%; mode  2: 30.3%; mode  3: 46.0%;  
+Smooth cn within the sponge area for cpt=*2: mode  1; mode  2; mode  3; done.
+Diurnal frequencies (0.7292E-04)
+ 
+Removing inland seas/lakes: found 689 connected components;[H[2JSaving data as 2013_08_11__20_37
+Loading topography file: /scratch/a/users/amtvl/Tides/data/LAG/baro_fd/in/topo/nocs/topo_rot_2.0min_pole_15_-40.dat 
+ removed 687 of size < 14400 cells.
+Removing inland seas/lakes: found 214 connected components; removed 211 of size < 14400 cells.
+Removing inland seas/lakes: found 205 connected components; removed 203 of size < 14400 cells.
+Relative sponge area for cpt=*1: mode  1: 12.0%; mode  2: 21.0%; mode  3: 31.9%;  
+Smooth cn within the sponge area for cpt=*1: mode  1; mode  2; mode  3; done.
+Preparing matrices: GHU, GHV, KU, KV, v2uf, u2vf, Linear BBL, DUU-DVV, Param ITD (1 mat per cpt), b.c. DONE
+----------------------------------------------------------------------------------------
+Assemble global IT gen matrix: 1) common part for all modes, 2) individual (1 mat per mode and cpt_2)...  1,  2,  3,  1,  2,  3, DONE
+====================================
+Welcome to baro_solver (nonlinear)
+====================================
+==============
+ Iteration 1
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+Have [5.08E+07 x 5.08E+07] sparse matrix (nnz = 3.21E+08). Solve with pardiso.
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-41.9Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.8Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.1Gb.
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 2:07:41, Wall: 13:03.9)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-97.1Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.0Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.4Gb.
+   b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 1:05:43, Wall: 7:55.9)
+	-----------------------------------------------------------
+	 | Convg |  du  |  dv  | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ---- | ---- | ---- | ---- | ----- | --- |  
+	 | m2    | 1.35 | 1.83 | 0.3  | 0.07 | 0.001 | 0.2 |  
+	 | k1    | 2.29 | 2.66 | 0.2  | 0.01 | 0.000 | 0.2 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 92.725, Wall: 24.98)
+ 2. for k1: done (CPU: 93.234, Wall: 18.813)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:57.0, Wall: 6:57.5)
+  Storing: ** done (CPU: 6.681, Wall: 6.692)
+-----------------------------------------------------------------------------
+k1:	KE = 38.2 PJ, PE = 22.5 PJ, D = 0.339 TW. D_SAL = -0.022 GW, D_f = -0.011 GW.
+	D_BL = 0.245 TW, D_IT = 0.094 TW: D_ITP = 0.094 TW, D_ITM = 0.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.245 |  0.242  | 0.002 |  
+	 | DITP | 0.094 |  0.043  | 0.051 |  
+	 | DITM | 0.000 |  0.000  | 0.000 |  
+	 | D    | 0.339 |  0.286  | 0.053 |  
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-97.4Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.7Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.4Gb.
+   b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 1:12:56, Wall: 8:20.1)
+mode  2:    b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 36:06.5, Wall: 3:04.0)
+mode  3:    b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 36:08.6, Wall: 3:06.0)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 37:20.8, Wall: 3:13.4)
+mode  2:    b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 36:52.4, Wall: 3:10.5)
+mode  3:    b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 37:07.9, Wall: 3:12.6)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 50:37.0, Wall: 4:34.4)
+k1: moving average... done (CPU: 48:51.7, Wall: 4:21.2)
+ done (CPU: 1:39:47, Wall: 9:27.6)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 249.1 PJ, PE = 215.2 PJ, D = 2.932 TW. D_SAL = 0.004 GW, D_f = -0.004 GW.
+	D_BL = 1.783 TW, D_IT = 1.386 TW: D_ITP = 1.146 TW, D_ITM = 239.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.783 |  1.773  | 0.010 |  
+	 | DITP | 1.146 |  0.508  | 0.638 |  
+	 | DITM | 0.240 |  0.048  | 0.192 |  
+	 | D    | 3.169 |  2.329  | 0.840 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.2 PJ, PE = 22.5 PJ, D = 0.339 TW. D_SAL = -0.022 GW, D_f = -0.011 GW.
+	D_BL = 0.245 TW, D_IT = 0.123 TW: D_ITP = 0.094 TW, D_ITM = 29.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.245 |  0.242  | 0.002 |  
+	 | DITP | 0.094 |  0.043  | 0.051 |  
+	 | DITM | 0.029 |  0.012  | 0.017 |  
+	 | D    | 0.368 |  0.298  | 0.070 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 1:  9:32:58 CPU,  1:17:32  Wall
+==============
+ Iteration 2
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-97.4Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.7Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.1Gb.
+   b) Factorization... done (61.7Gb).    c) Solve... done (CPU: 1:06:56, Wall: 7:47.2)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (61.7Gb).    c) Solve... done (CPU: 38:53.7, Wall: 3:20.3)
+	-----------------------------------------------------------
+	 | Convg |    du   |    dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------- | ------- | ---- | ---- | ----- | --- |  
+	 | m2    |  283.00 |  163.08 | 4.2  | 0.25 | 0.012 | 4.0 |  
+	 | k1    | 2068.96 | 1679.70 | 7.0  | 0.09 | 0.004 | 5.7 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 90.004, Wall: 28.458)
+ 2. for k1: done (CPU: 88.625, Wall: 18.661)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:58.2, Wall: 6:58.7)
+  Storing: ** done (CPU: 6.355, Wall: 6.361)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.1Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.2Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.1Gb.
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 1:09:41, Wall: 8:21.6)
+mode  2:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 39:05.4, Wall: 3:24.6)
+mode  3:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 39:05.3, Wall: 3:21.8)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 38:30.6, Wall: 3:18.9)
+mode  2:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 39:07.7, Wall: 3:21.0)
+mode  3:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 38:01.5, Wall: 3:15.1)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 50:40.2, Wall: 4:29.0)
+k1: moving average... done (CPU: 50:23.7, Wall: 4:29.4)
+ done (CPU: 1:41:28, Wall: 9:52.3)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 238.8 PJ, PE = 205.6 PJ, D = 2.916 TW. D_SAL = 0.007 GW, D_f = -0.003 GW.
+	D_BL = 1.670 TW, D_IT = 1.325 TW: D_ITP = 1.096 TW, D_ITM = 228.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.670 |  1.661  | 0.010 |  
+	 | DITP | 1.096 |  0.485  | 0.611 |  
+	 | DITM | 0.229 |  0.044  | 0.184 |  
+	 | D    | 2.995 |  2.190  | 0.805 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.5 PJ, PE = 22.4 PJ, D = 0.345 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.233 TW, D_IT = 0.127 TW: D_ITP = 0.103 TW, D_ITM = 24.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.233 |  0.230  | 0.002 |  
+	 | DITP | 0.103 |  0.050  | 0.053 |  
+	 | DITM | 0.025 |  0.010  | 0.015 |  
+	 | D    | 0.360 |  0.290  | 0.070 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 2:  8:12:09 CPU,  1:07:45  Wall
+==============
+ Iteration 3
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.1Gb; permanent-36.3Gb) 
+      Size of matrix factors 62.0Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (62.0Gb).    c) Solve... done (CPU: 1:07:32, Wall: 7:48.8)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (62.0Gb).    c) Solve... done (CPU: 40:28.1, Wall: 3:27.4)
+	-----------------------------------------------------------
+	 | Convg |    du   |    dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------- | ------- | ---- | ---- | ----- | --- |  
+	 | m2    |  181.38 |  193.06 | 2.3  | 0.12 | 0.006 | 2.1 |  
+	 | k1    | 1033.95 | 1459.64 | 3.5  | 0.08 | 0.001 | 2.3 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 94.695, Wall: 31.18)
+ 2. for k1: done (CPU: 85.438, Wall: 18.619)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 7:06.7, Wall: 7:07.2)
+  Storing: ** done (CPU: 7.484, Wall: 7.487)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.9Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 1:06:55, Wall: 8:00.4)
+mode  2:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 38:49.1, Wall: 3:18.7)
+mode  3:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 39:34.8, Wall: 3:24.6)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 39:01.5, Wall: 3:22.7)
+mode  2:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 37:25.6, Wall: 3:11.7)
+mode  3:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 37:42.0, Wall: 3:13.4)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:47.1, Wall: 4:43.1)
+k1: moving average... done (CPU: 50:03.4, Wall: 4:27.8)
+ done (CPU: 1:42:13, Wall: 10:02.0)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 233.9 PJ, PE = 201.1 PJ, D = 2.908 TW. D_SAL = 0.007 GW, D_f = -0.003 GW.
+	D_BL = 1.639 TW, D_IT = 1.298 TW: D_ITP = 1.074 TW, D_ITM = 223.5 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.639 |  1.630  | 0.009 |  
+	 | DITP | 1.074 |  0.476  | 0.598 |  
+	 | DITM | 0.223 |  0.043  | 0.180 |  
+	 | D    | 2.937 |  2.149  | 0.788 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.3 PJ, PE = 22.2 PJ, D = 0.345 TW. D_SAL = -0.021 GW, D_f = -0.011 GW.
+	D_BL = 0.231 TW, D_IT = 0.118 TW: D_ITP = 0.094 TW, D_ITM = 23.9 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.231 |  0.229  | 0.002 |  
+	 | DITP | 0.094 |  0.043  | 0.052 |  
+	 | DITM | 0.024 |  0.009  | 0.015 |  
+	 | D    | 0.349 |  0.280  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 3:  8:11:28 CPU,  1:07:37  Wall
+==============
+ Iteration 4
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.6Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 1:01:38, Wall: 7:35.7)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 36:16.0, Wall: 3:04.6)
+	-----------------------------------------------------------
+	 | Convg |   du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------ | ---- | ---- | ----- | --- |  
+	 | m2    | 181.82 | 482.46 | 1.2  | 0.14 | 0.003 | 1.0 |  
+	 | k1    | 516.65 | 712.06 | 2.3  | 0.04 | 0.001 | 1.2 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 84.664, Wall: 27.415)
+ 2. for k1: done (CPU: 88.945, Wall: 17.488)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 7:09.0, Wall: 7:09.6)
+  Storing: ** done (CPU: 6.304, Wall: 6.307)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.8Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 1:06:27, Wall: 7:46.2)
+mode  2:    b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 37:53.7, Wall: 3:14.4)
+mode  3:    b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 38:57.0, Wall: 3:21.1)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 37:13.2, Wall: 3:09.3)
+mode  2:    b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 38:02.0, Wall: 3:15.2)
+mode  3:    b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 38:36.2, Wall: 3:21.9)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:38.8, Wall: 4:33.6)
+k1: moving average... done (CPU: 51:11.4, Wall: 4:36.0)
+ done (CPU: 1:43:13, Wall: 10:09.0)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 231.6 PJ, PE = 199.0 PJ, D = 2.904 TW. D_SAL = 0.007 GW, D_f = -0.003 GW.
+	D_BL = 1.630 TW, D_IT = 1.286 TW: D_ITP = 1.065 TW, D_ITM = 221.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.630 |  1.621  | 0.009 |  
+	 | DITP | 1.065 |  0.472  | 0.592 |  
+	 | DITM | 0.221 |  0.043  | 0.178 |  
+	 | D    | 2.916 |  2.136  | 0.780 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.1 PJ, PE = 22.2 PJ, D = 0.346 TW. D_SAL = -0.020 GW, D_f = -0.010 GW.
+	D_BL = 0.231 TW, D_IT = 0.117 TW: D_ITP = 0.092 TW, D_ITM = 24.4 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.231 |  0.228  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.024 |  0.009  | 0.016 |  
+	 | D    | 0.347 |  0.278  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 4:  7:59:25 CPU,  1:06:28  Wall
+==============
+ Iteration 5
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.1Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 1:05:28, Wall: 7:38.7)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 38:01.2, Wall: 3:17.2)
+	-----------------------------------------------------------
+	 | Convg |    du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------- | ------ | ---- | ---- | ----- | --- |  
+	 | m2    |  308.40 | 343.79 | 0.7  | 0.08 | 0.001 | 0.5 |  
+	 | k1    | 1758.48 | 816.86 | 1.9  | 0.10 | 0.001 | 1.0 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 89.984, Wall: 28.175)
+ 2. for k1: done (CPU: 92.094, Wall: 17.904)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:37.1, Wall: 6:37.5)
+  Storing: ** done (CPU: 6.546, Wall: 6.546)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.1Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 1:06:51, Wall: 7:58.3)
+mode  2:    b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 39:03.3, Wall: 3:20.2)
+mode  3:    b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 41:08.5, Wall: 3:31.8)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 40:59.1, Wall: 3:33.9)
+mode  2:    b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 39:23.2, Wall: 3:23.2)
+mode  3:    b) Factorization... done (61.1Gb).    c) Solve... done (CPU: 40:42.2, Wall: 3:32.9)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:52.2, Wall: 4:38.5)
+k1: moving average... done (CPU: 52:08.5, Wall: 4:42.2)
+ done (CPU: 1:44:26, Wall: 10:19.0)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 230.6 PJ, PE = 198.0 PJ, D = 2.902 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.627 TW, D_IT = 1.280 TW: D_ITP = 1.060 TW, D_ITM = 219.9 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.627 |  1.618  | 0.009 |  
+	 | DITP | 1.060 |  0.471  | 0.589 |  
+	 | DITM | 0.220 |  0.043  | 0.177 |  
+	 | D    | 2.907 |  2.132  | 0.775 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.4 PJ, PE = 22.2 PJ, D = 0.346 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.231 TW, D_IT = 0.117 TW: D_ITP = 0.093 TW, D_ITM = 24.9 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.231 |  0.229  | 0.002 |  
+	 | DITP | 0.093 |  0.041  | 0.051 |  
+	 | DITM | 0.025 |  0.009  | 0.016 |  
+	 | D    | 0.349 |  0.279  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 5:  8:16:55 CPU,  1:07:38  Wall
+==============
+ Iteration 6
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.4Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.4Gb).    c) Solve... done (CPU: 1:05:47, Wall: 7:39.4)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (61.4Gb).    c) Solve... done (CPU: 39:31.7, Wall: 3:22.4)
+	-----------------------------------------------------------
+	 | Convg |    du   |    dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------- | ------- | ---- | ---- | ----- | --- |  
+	 | m2    | 1140.62 | 1300.51 | 0.4  | 0.11 | 0.001 | 0.2 |  
+	 | k1    |  877.43 |  409.83 | 1.4  | 0.09 | 0.000 | 0.5 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 88.344, Wall: 28.661)
+ 2. for k1: done (CPU: 90.828, Wall: 18.96)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 7:08.1, Wall: 7:08.5)
+  Storing: ** done (CPU: 9.250, Wall: 9.263)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.5Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 1:02:49, Wall: 7:37.4)
+mode  2:    b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 36:24.5, Wall: 3:06.2)
+mode  3:    b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 35:29.5, Wall: 3:03.6)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 37:47.3, Wall: 3:13.8)
+mode  2:    b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 36:52.2, Wall: 3:09.0)
+mode  3:    b) Factorization... done (60.5Gb).    c) Solve... done (CPU: 35:13.5, Wall: 3:00.8)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:05.1, Wall: 4:35.0)
+k1: moving average... done (CPU: 50:38.7, Wall: 4:27.8)
+ done (CPU: 1:42:09, Wall: 10:04.5)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 230.1 PJ, PE = 197.5 PJ, D = 2.901 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.627 TW, D_IT = 1.281 TW: D_ITP = 1.062 TW, D_ITM = 219.2 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.627 |  1.618  | 0.009 |  
+	 | DITP | 1.062 |  0.474  | 0.588 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.908 |  2.135  | 0.773 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.2 PJ, PE = 22.2 PJ, D = 0.347 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.230 TW, D_IT = 0.117 TW: D_ITP = 0.092 TW, D_ITM = 25.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.230 |  0.228  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.025 |  0.009  | 0.016 |  
+	 | D    | 0.348 |  0.278  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 6:  7:53:43 CPU,  1:06:33  Wall
+==============
+ Iteration 7
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.2Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 1:05:09, Wall: 7:44.8)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 40:14.2, Wall: 3:26.6)
+	-----------------------------------------------------------
+	 | Convg |    du   |    dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------- | ------- | ---- | ---- | ----- | --- |  
+	 | m2    |  568.56 |  648.30 | 0.2  | 0.07 | 0.000 | 0.1 |  
+	 | k1    | 1183.10 | 1231.60 | 1.5  | 0.26 | 0.001 | 0.7 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 93.578, Wall: 28.939)
+ 2. for k1: done (CPU: 86.484, Wall: 17.76)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 7:51.7, Wall: 7:52.2)
+  Storing: ** done (CPU: 6.671, Wall: 6.692)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.9Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 1:06:44, Wall: 7:51.3)
+mode  2:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 37:41.9, Wall: 3:13.5)
+mode  3:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 39:55.5, Wall: 3:28.8)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 38:00.8, Wall: 3:15.6)
+mode  2:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 38:17.6, Wall: 3:18.4)
+mode  3:    b) Factorization... done (60.9Gb).    c) Solve... done (CPU: 39:31.0, Wall: 3:22.2)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:08.7, Wall: 4:33.7)
+k1: moving average... done (CPU: 51:17.1, Wall: 4:32.6)
+ done (CPU: 1:42:52, Wall: 10:06.7)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 229.8 PJ, PE = 197.3 PJ, D = 2.900 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.626 TW, D_IT = 1.277 TW: D_ITP = 1.058 TW, D_ITM = 218.9 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.626 |  1.617  | 0.009 |  
+	 | DITP | 1.058 |  0.470  | 0.587 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.902 |  2.130  | 0.772 |  
+-----------------------------------------------------------------------------
+k1:	KE = 40.8 PJ, PE = 22.3 PJ, D = 0.347 TW. D_SAL = -0.020 GW, D_f = -0.008 GW.
+	D_BL = 0.400 TW, D_IT = 0.118 TW: D_ITP = 0.092 TW, D_ITM = 25.9 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.400 |  0.397  | 0.003 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.026 |  0.009  | 0.017 |  
+	 | D    | 0.519 |  0.447  | 0.071 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 7:  8:10:42 CPU,  1:08:43  Wall
+==============
+ Iteration 8
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.3Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 1:05:15, Wall: 7:45.5)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 38:59.9, Wall: 3:20.8)
+	-----------------------------------------------------------
+	 | Convg |   du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------ | ---- | ---- | ----- | --- |  
+	 | m2    | 284.21 | 324.02 | 0.2  | 0.17 | 0.000 | 0.1 |  
+	 | k1    | 573.17 | 595.62 | 1.3  | 0.14 | 0.000 | 0.5 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 93.938, Wall: 29.166)
+ 2. for k1: done (CPU: 84.547, Wall: 17.401)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:50.9, Wall: 6:51.4)
+  Storing: ** done (CPU: 7.750, Wall: 7.756)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.0Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 1:06:03, Wall: 7:52.0)
+mode  2:    b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 37:20.6, Wall: 3:11.3)
+mode  3:    b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 39:24.4, Wall: 3:24.5)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 38:35.9, Wall: 3:18.8)
+mode  2:    b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 39:10.7, Wall: 3:25.6)
+mode  3:    b) Factorization... done (61.0Gb).    c) Solve... done (CPU: 39:30.9, Wall: 3:24.7)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:05.7, Wall: 4:30.7)
+k1: moving average... done (CPU: 50:57.9, Wall: 4:28.9)
+ done (CPU: 1:42:27, Wall: 9:58.2)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 229.7 PJ, PE = 197.2 PJ, D = 2.900 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.626 TW, D_IT = 1.276 TW: D_ITP = 1.057 TW, D_ITM = 218.7 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.626 |  1.617  | 0.009 |  
+	 | DITP | 1.057 |  0.470  | 0.587 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.902 |  2.130  | 0.772 |  
+-----------------------------------------------------------------------------
+k1:	KE = 39.3 PJ, PE = 22.2 PJ, D = 0.347 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.253 TW, D_IT = 0.117 TW: D_ITP = 0.092 TW, D_ITM = 25.4 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.253 |  0.251  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.025 |  0.009  | 0.016 |  
+	 | D    | 0.371 |  0.301  | 0.070 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 8:  8:07:51 CPU,  1:07:19  Wall
+==============
+ Iteration 9
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.7Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 1:04:32, Wall: 7:32.6)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 36:15.9, Wall: 3:05.5)
+	-----------------------------------------------------------
+	 | Convg |   du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------ | ---- | ---- | ----- | --- |  
+	 | m2    | 142.05 | 161.89 | 0.2  | 0.10 | 0.000 | 0.0 |  
+	 | k1    | 351.35 | 348.77 | 1.1  | 0.07 | 0.000 | 0.3 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 78.609, Wall: 28.86)
+ 2. for k1: done (CPU: 86, Wall: 17.961)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:41.9, Wall: 6:42.3)
+  Storing: ** done (CPU: 6.500, Wall: 6.504)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.6Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 1:06:29, Wall: 7:52.1)
+mode  2:    b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 37:37.4, Wall: 3:13.4)
+mode  3:    b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 36:28.4, Wall: 3:09.4)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 39:06.7, Wall: 3:21.6)
+mode  2:    b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 38:04.7, Wall: 3:15.1)
+mode  3:    b) Factorization... done (60.6Gb).    c) Solve... done (CPU: 36:57.0, Wall: 3:11.8)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:05.4, Wall: 4:31.7)
+k1: moving average... done (CPU: 50:13.8, Wall: 4:26.0)
+ done (CPU: 1:41:40, Wall: 9:48.2)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 229.7 PJ, PE = 197.2 PJ, D = 2.900 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.626 TW, D_IT = 1.275 TW: D_ITP = 1.056 TW, D_ITM = 218.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.626 |  1.617  | 0.009 |  
+	 | DITP | 1.056 |  0.469  | 0.587 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.901 |  2.129  | 0.772 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.5 PJ, PE = 22.2 PJ, D = 0.347 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.233 TW, D_IT = 0.117 TW: D_ITP = 0.092 TW, D_ITM = 24.5 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.233 |  0.230  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.025 |  0.009  | 0.016 |  
+	 | D    | 0.349 |  0.280  | 0.070 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 9:  7:57:59 CPU,  1:05:58  Wall
+==============
+ Iteration 10
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.8Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 1:04:01, Wall: 7:33.1)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 36:57.3, Wall: 3:11.2)
+	-----------------------------------------------------------
+	 | Convg |   du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------ | ---- | ---- | ----- | --- |  
+	 | m2    |  84.63 |  80.87 | 0.1  | 0.05 | 0.000 | 0.0 |  
+	 | k1    | 373.17 | 373.92 | 1.1  | 0.07 | 0.000 | 0.4 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 86.875, Wall: 29.402)
+ 2. for k1: done (CPU: 89.031, Wall: 18.01)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 7:25.9, Wall: 7:26.5)
+  Storing: ** done (CPU: 9.031, Wall: 9.059)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.3Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 1:08:04, Wall: 8:09.8)
+mode  2:    b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 38:09.2, Wall: 3:16.1)
+mode  3:    b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 39:14.7, Wall: 3:21.8)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 38:03.1, Wall: 3:13.3)
+mode  2:    b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 37:41.8, Wall: 3:12.3)
+mode  3:    b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 38:46.8, Wall: 3:19.2)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 51:35.0, Wall: 4:37.4)
+k1: moving average... done (CPU: 51:09.1, Wall: 4:30.6)
+ done (CPU: 1:43:09, Wall: 10:04.3)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 229.6 PJ, PE = 197.2 PJ, D = 2.900 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.626 TW, D_IT = 1.274 TW: D_ITP = 1.056 TW, D_ITM = 218.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.626 |  1.617  | 0.009 |  
+	 | DITP | 1.056 |  0.469  | 0.587 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.900 |  2.129  | 0.772 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.1 PJ, PE = 22.1 PJ, D = 0.346 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.230 TW, D_IT = 0.116 TW: D_ITP = 0.092 TW, D_ITM = 24.7 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.230 |  0.227  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.025 |  0.009  | 0.016 |  
+	 | D    | 0.346 |  0.277  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 10:  8:05:37 CPU,  1:07:14  Wall
+==============
+ Iteration 11
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.8Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 1:02:23, Wall: 7:32.4)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (60.8Gb).    c) Solve... done (CPU: 36:36.5, Wall: 3:07.8)
+	-----------------------------------------------------------
+	 | Convg |   du   |   dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------ | ---- | ---- | ----- | --- |  
+	 | m2    | 111.96 | 101.62 | 0.1  | 0.05 | 0.000 | 0.0 |  
+	 | k1    | 168.92 | 300.84 | 1.0  | 0.15 | 0.000 | 0.3 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 79.781, Wall: 27.935)
+ 2. for k1: done (CPU: 77.063, Wall: 16.317)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:15.3, Wall: 6:15.7)
+  Storing: ** done (CPU: 6.281, Wall: 6.495)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.2Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 1:02:50, Wall: 7:13.1)
+mode  2:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 32:46.9, Wall: 2:46.5)
+mode  3:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 32:12.7, Wall: 2:47.2)
+ 2) Calc barotropic forcing for k1: 
+mode  1:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 32:22.1, Wall: 2:46.6)
+mode  2:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 32:50.8, Wall: 2:50.2)
+mode  3:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 31:21.1, Wall: 2:39.1)
+  Storing IT drag: (smoothed over a 21 grid pts per edge square) m2: moving average... done (CPU: 43:52.2, Wall: 3:51.4)
+k1: moving average... done (CPU: 45:35.6, Wall: 4:03.7)
+ done (CPU: 1:29:54, Wall: 9:06.0)
+========================================================================
+========================================================================
+-----------------------------------------------------------------------------
+m2:	KE = 229.6 PJ, PE = 197.2 PJ, D = 2.900 TW. D_SAL = 0.006 GW, D_f = -0.003 GW.
+	D_BL = 1.626 TW, D_IT = 1.274 TW: D_ITP = 1.056 TW, D_ITM = 218.5 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.626 |  1.617  | 0.009 |  
+	 | DITP | 1.056 |  0.469  | 0.587 |  
+	 | DITM | 0.219 |  0.043  | 0.176 |  
+	 | D    | 2.900 |  2.129  | 0.771 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.1 PJ, PE = 22.2 PJ, D = 0.346 TW. D_SAL = -0.021 GW, D_f = -0.010 GW.
+	D_BL = 0.230 TW, D_IT = 0.117 TW: D_ITP = 0.092 TW, D_ITM = 25.6 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.230 |  0.228  | 0.002 |  
+	 | DITP | 0.092 |  0.041  | 0.051 |  
+	 | DITM | 0.026 |  0.010  | 0.016 |  
+	 | D    | 0.347 |  0.278  | 0.069 |  
+---------------------------------------------------------------------------
+===>>> Total time spent on Iteration 11:  7:13:08 CPU,  1:01:34  Wall
+==============
+ Iteration 12
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 60.7Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 55:47.0, Wall: 6:39.3)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   b) Factorization... done (60.7Gb).    c) Solve... done (CPU: 30:23.2, Wall: 2:34.4)
+	-----------------------------------------------------------
+	 | Convg |   du   |    dv   | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ------ | ------- | ---- | ---- | ----- | --- |  
+	 | m2    |  56.72 |   52.67 | 0.1  | 0.03 | 0.000 | 0.0 |  
+	 | k1    | 467.77 | 1021.92 | 1.0  | 0.11 | 0.000 | 0.3 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 77.344, Wall: 26.984)
+ 2. for k1: done (CPU: 78.5, Wall: 16.293)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:11.7, Wall: 6:12.0)
+  Storing: ** done (CPU: 6.062, Wall: 6.072)
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-98.3Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.4Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 98.3Gb.
+   b) Factorization... done (61.4Gb).    c) Solve... done (CPU: 1:32:20, Wall: 9:46.5)
+mode  2:    b) Factorization... [H[2JSaving data as 2013_08_12__12_07
+ *************************************************************************************************
+ The parameters for the previously generated and current grid do not match exactly.
+ Differenced ignored. Using the previously generated grid.
+ *************************************************************************************************
+Linking to previously generated grid: /2013_08_11__16_30
+----------------------------------------------------------------------------------------
+Prepare the initial guess baro solution: use 2013_08_11__16_30
+Identical grids. Present solution is copied and taken as initial guess.
+[H[2JSaving data as 2013_08_12__12_07
+ *************************************************************************************************
+ The parameters for the previously generated and current grid do not match exactly.
+ Differenced ignored. Using the previously generated grid.
+ *************************************************************************************************
+Linking to previously generated grid: /2013_08_11__16_30
+----------------------------------------------------------------------------------------
+Prepare the initial guess baro solution: use 2013_08_11__16_30
+Identical grids. Present solution is copied and taken as initial guess.
+[H[2JSaving data as 2013_08_12__12_10
+Linking to previously generated grid: /2013_08_11__16_30
+----------------------------------------------------------------------------------------
+Prepare the initial guess baro solution: use 2013_08_11__16_30
+Identical grids. Present solution is copied and taken as initial guess.
+----------------------------------------------------------------------------------------
+ 
+Linking to c_n on the previously generated grid: done (CPU: 0.001, Wall: 0.032)
+ 
+Generating sponge layer(s) for  3 modes. Semidiurnal frequencies (0.1405E-03)
+ 
+Removing inland seas/lakes: found 362 connected components; removed 357 of size < 14400 cells.
+Removing inland seas/lakes: found 202 connected components; removed 200 of size < 14400 cells.
+Removing inland seas/lakes: found 329 connected components; removed 329 of size < 14400 cells.
+Relative sponge area for cpt=*2: mode  1: 16.3%; mode  2: 30.3%; mode  3: 46.0%;  
+Smooth cn within the sponge area for cpt=*2: mode  1; mode  2; mode  3; done.
+Diurnal frequencies (0.7292E-04)
+ 
+Removing inland seas/lakes: found 689 connected components; removed 687 of size < 14400 cells.
+Removing inland seas/lakes: found 214 connected components; removed 211 of size < 14400 cells.
+Removing inland seas/lakes: found 205 connected components; removed 203 of size < 14400 cells.
+Relative sponge area for cpt=*1: mode  1: 12.0%; mode  2: 21.0%; mode  3: 31.9%;  
+Smooth cn within the sponge area for cpt=*1: mode  1; mode  2; mode  3; done.
+Preparing matrices: GHU, GHV, KU, KV, v2uf, u2vf, Linear BBL, DUU-DVV, Param ITD (1 mat per cpt), b.c. DONE
+----------------------------------------------------------------------------------------
+Assemble global IT gen matrix: 1) common part for all modes, 2) individual (1 mat per mode and cpt_2)...  1,  2,  3,  1,  2,  3, DONE
+====================================
+Welcome to baro_solver (nonlinear)
+====================================
+==============
+ Iteration 1
+==============
+ ------------ BAROTROPIC TIDE ------------ 
+Have [5.08E+07 x 5.08E+07] sparse matrix (nnz = 3.21E+08). Solve with pardiso.
+ 1. for m2: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-41.9Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.3Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.6Gb.
+   b) Factorization... done (61.3Gb).    c) Solve... done (CPU: 1:21:11, Wall: 9:02.0)
+ 2. for k1: Assembling the matrix and rhs, implementing b.c. 
+   a) Reordering... done (peak-97.6Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.2Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.6Gb.
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 1:03:16, Wall: 7:43.3)
+	-----------------------------------------------------------
+	 | Convg |  du  |  dv  | duv% |  dh  | dhbar | dh% | 	
+	 | ----- | ---- | ---- | ---- | ---- | ----- | --- |  
+	 | m2    | 1.35 | 1.83 | 0.3  | 0.07 | 0.001 | 0.2 |  
+	 | k1    | 2.29 | 2.66 | 0.2  | 0.01 | 0.000 | 0.2 |  
+	-----------------------------------------------------------
+ 
+Calculate hsal and beta: 
+ 1. for m2: done (CPU: 80.51, Wall: 27.716)
+ 2. for k1: done (CPU: 72.209, Wall: 16.14)
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 6:50.3, Wall: 6:50.9)
+  Storing: ** done (CPU: 9.705, Wall: 20.253)
+-----------------------------------------------------------------------------
+m2:	KE = 249.1 PJ, PE = 215.2 PJ, D = 2.932 TW. D_SAL = 0.004 GW, D_f = -0.004 GW.
+	D_BL = 1.783 TW, D_IT = 1.146 TW: D_ITP = 1.146 TW, D_ITM = 0.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 1.783 |  1.773  | 0.010 |  
+	 | DITP | 1.146 |  0.508  | 0.638 |  
+	 | DITM | 0.000 |  0.000  | 0.000 |  
+	 | D    | 2.929 |  2.281  | 0.649 |  
+-----------------------------------------------------------------------------
+k1:	KE = 38.2 PJ, PE = 22.5 PJ, D = 0.339 TW. D_SAL = -0.022 GW, D_f = -0.011 GW.
+	D_BL = 0.245 TW, D_IT = 0.094 TW: D_ITP = 0.094 TW, D_ITM = 0.0 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 0.245 |  0.242  | 0.002 |  
+	 | DITP | 0.094 |  0.043  | 0.051 |  
+	 | DITM | 0.000 |  0.000  | 0.000 |  
+	 | D    | 0.339 |  0.286  | 0.053 |  
+------------ INTERNAL TIDES ------------
+ 1) Calc barotropic forcing for m2: 
+mode  1:    a) Reordering... done (peak-97.6Gb; permanent-36.3Gb) 
+      Size of matrix factors 61.2Gb < 120.0Gb RAM+Swap. Running in-core with peak memory usage: 97.6Gb.
+   b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 1:13:34, Wall: 8:38.0)
+mode  2:    b) Factorization... done (61.2Gb).    c) Solve... done (CPU: 31:45.6, Wall: 2:44.4)
+mode  3:    b) Factorization... 

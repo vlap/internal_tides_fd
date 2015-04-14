@@ -1,0 +1,224 @@
+!********************************************************************
+!			CONTROL FILE
+! Use '=' as a separator between the variable and its value
+! String values begin right after '=' symbol, no quotes!
+! Comments are marked with '!'
+!********************************************************************
+!********************************************************************
+! General specifications:
+!********************************************************************
+cpts=m2		! m2k1s2o1 ! m2, k1, s2, o1, p1, n2, mf, k2, mm, q1 
+		! Eight primary (M2, S2, N2, K2, K1, O1, P1, Q1), two long period (Mf,Mm)
+graphics=0	! 0 -- no graphics; 1 -- plot the final sols; 2 -- convergence plots (matlab22 command)
+messages=1	! 0 -- none, 1 -- detailed timings, 2 -- integrals every iteration, 3 -- solver stats (a lot)
+		!
+isave=0		! 1 -- save to /yyyy_mm_dd__HH_MM
+		! 0 -- save to /0000_00_00__00_00
+cleanup=0	! 0 - none, 1 - remove files in 'temp' dirs, 2 - remove ALL files in dir_mats
+!****************************
+! Previously generated grids
+!****************************
+grid_link=1	! 0 -- copy; 1 -- make a hard link (fast)
+! Grids in Mercator:
+! ==========================
+! Grids in Lat-Lon:
+!gridid=2013_10_06__20_22! (2013_10_06__20_22: nph = 10800, nmodes = 4, truncated)
+!
+!gridid=2013_10_07__20_25! (2013_10_07__20_25: nph = 9000, n_modes=3, Sav-Gol)
+!
+!gridid=2013_09_30__20_00! (2013_09_27__14_54: nph = 8640, n_modes=3, Sav-Gol)
+!
+!gridid=2013_09_26__09_40! (2013_08_01__23_29: nph = 7200, n_modes=3, truncated)
+!			   (2013_08_11__16_30: nph = 7200, n_modes=3, trunc+sinc)!renamed
+!			   (2013_08_14__22_25: nph = 7200, n_modes=3, Sav-Gol)
+!
+!gridid=2013_09_25__19_43! (2013_08_09__12_45: nph = 5400, n_modes=3, truncated)
+!			   (2013_08_11__20_38: nph = 5400, n_modes=3, trunc+sinc)
+!			   (2013_09_20__10_54: nph = 5400, n_modes=3, Sav-Gol)
+!
+!gridid=! (nph = 5040, n_modes=3, truncated)
+!gridid=2013_09_25__18_50! (2013_08_09__12_48: nph = 4500, n_modes=2, truncated)
+!			   (2013_08_11__06_05: nph = 4500, n_modes=2, trunc+sinc)
+!			   (2013_09_20__12_28: nph = 4500, n_modes=2, Sav-Gol)
+!
+!gridid=! nph = 4320
+!
+!gridid=2013_09_25__18_51! (2013_07_31__16_53: nph = 3600, n_modes=2, truncated)
+!			   (2013_08_11__00_01: nph = 3600, n_modes=2, trunc+sinc)
+!			   (2013_09_15__02_22: nph = 3600, n_modes=2, Sav-Gol)!renamed
+!
+!gridid=2013_08_07__23_45! nph = 2160
+!************** use previously generated solution as initial guess *************************
+load_sol=0		! 0 -- 0-init guess; 1 -- use the solution found at gridid_sol;
+			! 2 -- load and use the tpxo solution
+gridid_sol=2013_10_07__20_25	! directory where to look
+		! nph=7200, cpts=m2k1 (baro-only itns=9): 2013_08_01__23_29 (truncation filtering)
+		! nph=7200, cpts=m2k1 (baro-only itns=9): 2013_08_11__16_30 (trunc+sinc filtering)
+tpxo_dir=tpxo7.2		! TPXO directory (on top of Tides/data)
+!********************************************************************
+! Global grid:
+!********************************************************************
+nph=1440	! 1/10 degree: 3600 ! 1/12 degree: 4320 ! 1/14 degree: 5040 ! 1/15 degree: 5400 ! 10800
+coor=2		! 1 for Mercator, 2 for lat-lon
+load_etopo=0	! 1 -- load the original ETOPO/NOCS file
+		! 0 -- use topo_file created earlier
+etopo_res=10800	! number of lon grid points that etopo should be interpolated down to
+		! 1min: 21600; 2min: 10800; 4min: 5400; 8min: 2700
+!	flags.global.filter.bays=1;  % 0=keep; 1=remove
+!	flags.global.filter.inlandseas=1; % 0=keep; 1=remove
+!	flags.global.filter.masklim=0.4;  % set to ocean when this proportion is exceeded...
+bays=1		! 0=keep; 1=remove
+inlandseas=1	! 0=keep; 1=remove
+hmin_scheme=2	! 1=simple min depth; 2=local critera
+hmin=10		! option 1: a simple minimum depth
+gppw=6		! option 2: min number of Grid Points Per Wavelength
+!*********************************************************************************************
+! Domain integrals:
+!*********************************************************************************************
+di_log=0	!  save calculated 
+baro_sol=1	!  make a copy of the calculated baro-only solution
+!************** report dissipation in (SHALLOW-DEEP) and (COASTAL-OPEN) ocean ****************
+sh_depth = 1000 ! deeper than sh_depth meters is DEEP, the rest is SHALLOW ocean
+coast_flag = 0	! 0 -- DO NOT do coast-op_ocean split in DI (slow); 1 -- calc coastal areas and integrals 
+coast_dist = 3e5! closer to the coast than coast_dist is COASTAL, the rest is OPEN ocean
+!********************************************************************
+!  Bottom friction scheme:
+!********************************************************************
+fr_scheme=2	! % 0=none, 1=linear (cd, ubar), 2=linear (cd, Qbar)
+		! % 3=quadratic (cd, Q); 4=local area models
+cd=0.0025	! nondimensional drag coefficient
+ubar=1		! option 1: average value for friction velocity
+Qbar=100	! option 2: average value for transport Q
+ndays = 0	! length of projection (in days) (optional, if =0 then calc_projection_period is used)
+nppp = 0	! min number of points per period (optional, if =0 then default 8 is used)
+!********************************************************************
+! BAROTROPIC Internal tide drag scheme
+!********************************************************************
+itd_scheme=0		!% 0=none; 1=parameterized IT drag;
+			!% 2=dynamic IT drag only; 20=forced lin intern tides (load_sol>0);
+			!% 3=split topo to rough and smooth using SHT (combine 1&2:)
+N_data=woa09_1deg_pole_15_-40	! file for statification data
+!N_data=0			! 0 for no data...
+!
+N_form = 1		!% 1 for uniform, 2 for Ns/(1-z/NL)
+Ns = .01		!% optional surface stratification
+Nl = 500		!% optional stratification lengthscale
+!************** topo smoothing *************************
+smooth_type=0		!% 0 - none; 1 - truncation smoothing; 2 - Gaussian spectral smoothing
+			!% 3 - truncation + sinc smoothing; 4 - Savitzky-Galoy filter
+baro_on_smoothed=1	!% 0 - baro problem is solved on usmoothed topo (large variations in shallow regions where H_hg varies); 1 - baro problem is solved on same smoothed grid as ITM
+!*******************************************************
+! IMPORTANT: value of sht_smooth_H given below is used only with itd_scheme=1.
+! When itd_scheme>1, smoothing degree is calculated using igw_gppw parameter
+!*******************************************************
+sht_smooth_H=1440	!% truncation order for the spherical harmonic representation of H (0 for none)
+			!% smallest resolved length scale is 2*pi*re/(2*sht_smooth_H), 
+			!% hence, sht_smooth_H=720 gives resolution of ~30km at the equator
+!************** itd_scheme=1 (and 3), parameterization *************************
+itd_coeff=1.33		!% a multiplying coeff in the ITD parametrization (1/3 for woa05; 1.33 for woa09 @bttm)
+trapped = 1		!% 0=all lats; 1=below crit lat
+!************** itd_scheme=2 (and 3), linear global IT scheme *******************
+n_modes=3		! # of IT modes solved for (cannot be large than # of N data points)
+!
+N_hor_var=1		!% 0-horizontally uniform N; 1-horizontally varying as given in N_data
+N_hmin=40		!% The interval for depths on which the eigenvalue problem is solved, i.e.
+N_hmax = 12000		!% solved on [0; H_b] where H_b in [N_hmin; N_hmax]
+cn_scheme=2		! cn is calculated with: 1 -- WKB; 2 -- solve eigvalue problem for cn(H)
+n_cheb=3		! # of Chebyshev nodes used for approximating cn(H) per 100 meeters in the interval [hmin; hmax]
+eig_order=2		! discretization order for the eigenvalue problem
+!smooth_dc2n=1		! 0 -- no smoothing; 1 -- smooth d(c2n)/dH using running average over itm_avg degrees (see below)
+!************** itd_scheme=3, mixed global IT scheme *******************
+eps_rough=0		! The criticality cut-off. Regions with |grad(H)|/tan(alpha)>eps_rough are too rough
+			! for IT gen there to be adequately resolved with itd_scheme=2. And itd_scheme=1 is applied there
+sponge_itd_param=1	! 0 -- no parametrised drag in the sponge; 1 -- retain it.
+smooth_itd_param=1	! 0 -- no smoothing; 1 -- smooth ||grad(H_residual)|| using running average over itm_avg degrees (see below)
+!************** Sponge Layer: **************************************
+igw_gppw=4		! min number of Grid Points Per Wavelength that defines min resolution of IGWs
+sponge_damp=1		! Rayleigh damping coeff within the sponge (times omega~1e-4 Hz). For example it_damp=1 means decreasing amp by a factor exp(-2*pi) after travelling 1 wavelength
+bulk_damp=0.01		! Rayleigh damping coeff within the domain (times omega~1e-4 Hz). For example, it_damp=1/(4*pi)~0.08 means e-folding after travelling 2 wavelength
+sponge_smooth=2		! 0 -- none; 1 -- fill in with nearest neighbour at the boundary; 2 -- relaxation smoothing (solve laplace eq within sponge)
+sponge_forcing=0	! 0 -- IT solution in the sponge is irrelevant (keep 0 to ensure convergence); 1 -- retain full barotropic-baroclinic coupling in the sponge;
+ctw_fix=1		! TEMPRORARY, INVESTIGATE! Normal sponge regions for costally trapped waves (K1) may result in regions of negative conversion (hence, bad convergence)
+			! Increasing sponge_damp by a factor of 10 removes those. Hence, an ad-hoc fix has been implemented, that multiplies the damping coefficient by 10 for CTW
+smooth_forcing=0	! 0 -- no smoothing; 1 -- smooth (u0,v0) using running average over itm_avg degrees (see below)
+!************** itd to baro conversion scheme params (for dynamically modelled ITD) **********************
+itm_method=10		! First digit: 1 -- (Qu, Qv) = (Du/u, Dv/v); 2 -- (Qu, Qv) = (Du/((u*gradH_u + v*gradH_v)*gradH_u), Du/((u*gradH_u + v*gradH_v)*gradH_v));  
+			! Second digit: 0 -- no smoothing; 1 -- smooth (Qu, Qv) like in SAL, but keep in the rhs the residuals (Du - betau*u, Dv - betav*v);
+			!		2 -- smooth (Du,Dv) using running average over itm_avg degrees (see below)
+			! Default choice (works best): itm_method=12
+itm_qmax=1d-3		! Linear Qu=Du/u can be locally up to 10^20. Keep it within [-itm_qmax; itm_qmax]
+itm_avg=0.25		! When coupling baroclinic to barotroric, average IT drag over this many degrees (needed for convergence in regions with strong negative IT->SurfT convercion. BEST: 1/8 deg=0.125)
+!********************************************************************
+!  SAL scheme:
+!********************************************************************
+sal_scheme=0	!% 0=none, 1=scalar approx, >=2 iteration
+		! % 2:real(beta0), 3: betamin < real(beta) < betamax
+beta0=0.085	! initial value for beta
+betamin=0	! % minimum value for beta (iteration)
+betamax=0.3 	! % maximum value for beta (iteration)
+ntrunc=720	! % maximum truncation order for the spherical harmonics
+		! ntrunc must be <= nlat-1, otherwise ntrunc:=nlat-1
+		! the series contains (ntrunc+1)*(ntrunc+2)/2 harmonics
+save_sht=1	! 0 - keep the SHT work arrays and Love numbers in memory between the iterations
+		! 1 - save them to disk (saves RAM if ntrunc is large (array size ~ntrunc^3))
+sal_avg=5	! average over this many degrees (half edge of an average box)
+!********************************************************************
+! BAROTROPIC nonlinear solver iterative scheme
+!********************************************************************
+itn_max=25		! the max alowed number of iterations
+cvg_scheme=1		!% 1 for complex dh, 2 for abs(dh)
+cvg_dhbar=0.001		!% domain averaged requirement on the residual
+cvg_dhmax=0.02		!% pointwise requirement on the residual
+! next two are not implemented
+!p_fric=1		! 1 for friction; 2 for over-relaxation
+!p_itd=1 		! 1 for friction; 2 for over-relaxation
+p_avg=0.5		! 0.5 for averaging between iterations; 1 for no averaging (for the barotropic tide); if 0 then the old solution is copied over and over
+p_itm_avg=1		! 0.5 for averaging between iterations; 1 for no averaging (for internal tides); if 0 then the old solution is copied over and over
+!WARNING: when p_avg=0.5 and p_itm_avg=0.5 regions of negative conversion can appear and ruin convergence (coastally trapped waves generated by K1)
+!********************************************************************
+! LIBRARIES AND THREADING
+!********************************************************************
+lib='m'			! 'm' for MKL lib functions; 's' for SparseKit and ad-hoc functions
+!omp_num_threads=24	! # of processors with shared memory, default = OMP_GET_MAX_THREADS
+!mpi_num_nodes=0	! # of nodes for the distributed-memory parallel solver, default = 0
+blas_num_threads=0	! if <0 then do not use MKL BLAS; 0 - auto; else # of threads for MKL BLAS
+!********************************************************************
+! MATRIX SOLVER
+!********************************************************************
+solver=pardiso		! umfpack, pardiso, gmres
+!******** Iterative algorithms (with preconditioning)    ****************************************
+gmres_prec=ilut		! Select the preconditioning method for GMRES: ilut (not implemented: ilu0)
+gmres_rest_it=3		! the number of the non-restarted FGMRES iterations.
+gmres_tol=9		! specifies residual tolerance: 10^{-gmres_rel_tol} (default is 1.0D-6)
+!*************** MKL, FGMRES witn incomplete parallel LU factorization ****************
+
+!*************** MKL, PARDISO ****************************************
+!******** Direct, with parallel LU factorization and Out-of-Core mode ********
+pardiso_symbolic=1	! 0 - incurres symbolic factorization on every iteration
+			! 1 - symbolic factorization on the 1st iteration only (the result is kept in RAM)
+
+pardiso_ooc=1		! 0 for IC (in-core) version (faster); 2 for forced OOC (out-of-core) version (slow)
+			! 1 - use IC version if available RAM suffices, otherwise use OOC version
+pardiso_max_ram=122880	! the total RAM (Mb) that can be used for
+			! storing the matrix factors (should be less than available RAM)
+pardiso_max_swap=0	! same for swap memory (Mb)
+			! 15360-15Gb, 18432-18Gb, 20480-20Gb, 22528-22Gb, 81920-80Gb, 122880-120Gb.
+pardiso_keep_files=0	! 0 -- files saved in OCC will be removed
+!**** Direct-Iterative CGS (Conjugate-Gradients Squared) with LU factorization on a first few steps ******
+pardiso_iterative=0	! 0 for direct solver; 1 incurres LU-preconditioned CGS iterations
+pardiso_iter_tol=6	! CGS iterations with astopping tolerance of 10^{-pardiso_iter_tol}
+!********************************************************************
+! Physical Parameters:
+!********************************************************************
+! In this configuration the North pole is centered on Greenland (30◦W, 80◦N)
+! and the South pole on Antarctica (30◦W, 80◦S)
+! The other option of (40◦W, 75◦N) seems to touch water within finer grid
+latP=15		! 15 ! 12.5   ! Pole of the rotated spherical coordinates
+lonP=-40	!-40 !-50
+
+re=6.371e6		! average earth's radius, m
+omega=7.292d-5	!7.292115e-5	! angular velocity, rad/s
+g=9.80		!9.80665	! surface gravity, m/s^2
+rhoe=5515		! average density of planet, kg/m^3
+rhoo=1030		! average density of seawater, kg/m^3
+

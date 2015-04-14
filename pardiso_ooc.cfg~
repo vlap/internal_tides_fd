@@ -1,0 +1,4 @@
+MKL_PARDISO_OOC_PATH = /home/amt6/amtvl/Desktop/scratch/Tides/data/LAG/baro_fd/out/pardiso_ooc
+MKL_PARDISO_OOC_MAX_CORE_SIZE = 20480
+MKL_PARDISO_OOC_MAX_SWAP_SIZE = 0
+MKL_PARDISO_OOC_KEEP_FILE = 1

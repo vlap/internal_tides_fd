@@ -1,0 +1,74 @@
+[H[2JSaving data as 2013_06_01__20_13
+Loading topography file: /home/amt6/amtvl/Desktop/scratch/Tides/data/LAG/baro_fd/in/topo/nocs/topo_rot_2.0min_pole_15_-40.dat 
+[H[2JSaving data as 2013_06_04__16_04
+Prepare the initial guess baro solution: use tpxo7.2
+ 1) m2: a) load u, v, h; b) interpolating: u, v, h ... DONE.
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 8.964, Wall: 8.972)
+  Storing: * done (CPU: 0.609, Wall: 0.609)
+Preparing matrices: GHU, GHV, KU, KV, b.c. DONE
+Removing inland seas/lakes: found 231 connected components; removed 228 of size < 5760 cells.
+ Mode           1 Relative sponge area %          17
+Assemble global IT gen matrix: 1) common part for all modes, 2) individual (1 mat per mode)...  1, DONE
+------------ INTERNAL TIDES ------------
+Calc barotropic forcing 
+ 1. for m2: mode  1   a) Reordering... done (peak-5.8Gb; permanent-5.0Gb) 
+      Size of matrix factors 8.0Gb < 15.0Gb RAM+Swap. Running in-core with peak memory usage: 12.9Gb.
+   b) Factorization... done (8.0Gb).    c) Solve... done (CPU: 7:34.866, Wall: 1:37.781)
+ m2 mode           1  max internal tide pressure [N/m2]:    235.52594429277329     
+ m2 mode           1  max modal velocity amp [m/s]:   0.36349982940420428     
+  Storing IT drag: * done (CPU: 1.002, Wall: 4.237)
+========================================================================
+========================================================================
+ 
+===>>> Total time spent on solving the system: 7:44.790 CPU, 1:53.443  Wall
+ 
+ loading itd drag
+-----------------------------------------------------------------------------
+m2:	KE = 138.9 PJ, PE = 150.2 PJ, D = 2.409 TW.
+	D_BL = 3.982 TW, D_IT = 0.080 TW, D_SAL = 0.000 GW, D_f = 2.962 GW.
+	---------------------------------------------------------------------
+	 | **** | Total | Shallow |  Deep | 	
+	 | ---- | ----- | ------- | ----- |  
+	 | D_BL | 3.982 |  3.978  | 0.003 |  
+	 | D_IT | 0.080 |  0.007  | 0.072 |  
+	 | D    | 4.061 |  3.986  | 0.075 |  
+ 
+===>>> Calculation of domain integrals: 3.053 CPU, 10.526  Wall
+Cleaning up temporary files 
+[H[2JSaving data as 2013_06_04__17_10
+Loading topography file: /home/amt6/amtvl/Desktop/scratch/Tides/data/LAG/baro_fd/in/topo/nocs/topo_rot_2.0min_pole_15_-40.dat 
+Interpolating topo to  5.00 min resolution global grid:  done.
+****** Ocean is in the first/last tau index of H_hg. Removed ******
+Removing bays and inlets: 4073 + 1070 + 548 + 291 + 172 + 117 + 88 + 63 + 46 + 34 + 27 + 19 + 14 + 11 + 7 + 4 + 3 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 0.
+Removing inland seas/lakes: found 121 connected components; removed 118 of size < 432 cells.
+Smoothing topography for the linear ITD scheme: Loading topography file: /home/amt6/amtvl/Desktop/scratch/Tides/data/LAG/baro_fd/in/topo/nocs/smoothed_t1_trunc5400_topo_rot_2.0min_pole_15_-40.dat 
+done (CPU: 0.878, Wall: 0.880)
+Allocating grid points: 6104785 for u, 6119651 for v, 6087464  for h.
+Making vectors: tau, H, evaluating on the u-, v-, h-grid (CPU: 1.2s, Wall:1.3s)
+Making matrices:
+ - d/dph and 1 for h-grid functions, evaluating on the u-grid (CPU: 0.8s, Wall:0.8s)
+ - d/dta and 1 for h grid functions, evaluating on the v-grid (CPU: 0.8s, Wall:0.8s)
+ - d/dph and 1 for u-grid functions, evaluating on the h-grid (CPU: 0.8s, Wall:0.8s)
+ - d/dta and 1 for v-grid functions, evaluating on the h-grid (CPU: 0.7s, Wall:0.7s)
+ - v & fv,     			     evaluating on the u-grid (CPU: 5.0s, Wall:5.0s)
+ - u & fu,     			     evaluating on the v-grid (CPU: 5.1s, Wall:5.1s)
+Saving matrices: done.
+Prepare the initial guess baro solution: use tpxo7.2
+ 1) m2: a) load u, v, h; b) interpolating: u, v, h ... DONE.
+  Welcome to calc_dhat: Projecting: ******** done (CPU: 20.299, Wall: 20.304)
+  Storing: * done (CPU: 1.343, Wall: 1.350)
+Preparing matrices: GHU, GHV, KU, KV, b.c. DONE
+Removing inland seas/lakes: found 376 connected components; removed 372 of size < 8640 cells.
+ Mode           1 Relative sponge area %          15
+Assemble global IT gen matrix: 1) common part for all modes, 2) individual (1 mat per mode)...  1, DONE
+------------ INTERNAL TIDES ------------
+Calc barotropic forcing 
+ 1. for m2: mode  1   a) Reordering... done (peak-13.2Gb; permanent-11.2Gb) 
+      Size of matrix factors 19.2Gb > 15.0Gb RAM+Swap. Running out-of-core with peak memory usage: 13.2Gb. 
+   b) Factorization... 
+Program received signal 11 (SIGSEGV): Segmentation fault.
+
+Backtrace for this error:
+  + /lib64/libc.so.6() [0x378bc32900]
+  + /lib64/libc.so.6(fseek+0x1) [0x378bc6df31]
+  + /opt/intel/composerxe-2011.5.220/mkl/lib/intel64/libmkl_core.so(mkl_pds_lp64_pardiso_ooc_fseek+0x21) [0x7fb570733951]

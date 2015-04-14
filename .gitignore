@@ -1,0 +1,13 @@
+# ignore all bin, mod, obj directories
+bin/
+mod/
+obj/
+
+# ignore all target directories
+target/
+
+# ignore all files ending with ~
+*~ 
+
+# ignore eclipse metadata directories
+.metadata
